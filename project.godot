@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="New Game Project"
+config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/use_filter=false
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=160
+window/size/viewport_height=144
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
+[gui]
+
+theme/custom="uid://dmscijs2s02ix"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)
