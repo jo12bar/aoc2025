@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://qw4vivknjbej"]
+
+[ext_resource type="Script" uid="uid://dxlw2dve4lxow" path="res://common/gui/challenge_greeter.gd" id="1_73mlb"]
+
+[node name="ChallengeGreeter" type="Panel" node_paths=PackedStringArray("title_label", "input_file_label", "select_input_file_button", "run_part_one_button", "run_part_two_button", "file_dialog")]
+custom_minimum_size = Vector2(110, 90)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_73mlb")
+title_label = NodePath("VBoxContainer/MarginContainer3/TitleLabel")
+input_file_label = NodePath("VBoxContainer/MarginContainer/VBoxContainer/InputFileLabel")
+select_input_file_button = NodePath("VBoxContainer/MarginContainer/VBoxContainer/SelectInputFileButton")
+run_part_one_button = NodePath("VBoxContainer/MarginContainer2/HBoxContainer/RunPartOneButton")
+run_part_two_button = NodePath("VBoxContainer/MarginContainer2/HBoxContainer/RunPartTwoButton")
+file_dialog = NodePath("FileDialog")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer/MarginContainer3"]
+layout_mode = 2
+text = "Day 00"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="SelectInputFileButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../../../MarginContainer2/HBoxContainer/RunPartOneButton")
+focus_next = NodePath("../../../MarginContainer2/HBoxContainer/RunPartOneButton")
+focus_previous = NodePath("../../../MarginContainer2/HBoxContainer/RunPartTwoButton")
+text = "Select Input File"
+
+[node name="InputFileLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Current input file:
+res://problems/day00.txt"
+text_overrun_behavior = 3
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RunPartOneButton" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../MarginContainer/VBoxContainer/SelectInputFileButton")
+focus_neighbor_right = NodePath("../RunPartTwoButton")
+focus_next = NodePath("../RunPartTwoButton")
+focus_previous = NodePath("../../../MarginContainer/VBoxContainer/SelectInputFileButton")
+text = "Run Part 1"
+
+[node name="RunPartTwoButton" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../RunPartOneButton")
+focus_neighbor_top = NodePath("../../../MarginContainer/VBoxContainer/SelectInputFileButton")
+focus_next = NodePath("../../../MarginContainer/VBoxContainer/SelectInputFileButton")
+focus_previous = NodePath("../RunPartOneButton")
+text = "Run Part 2"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+size = Vector2i(1131, 640)
+popup_window = true
+content_scale_mode = 2
+content_scale_stretch = 1
+content_scale_factor = 2.0
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.txt;Challenge input text files;text/plain")
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/SelectInputFileButton" to="." method="_on_select_input_file_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer/RunPartOneButton" to="." method="_on_run_part_one_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer/RunPartTwoButton" to="." method="_on_run_part_two_button_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
