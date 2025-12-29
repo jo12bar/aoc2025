@@ -1,6 +1,5 @@
 extends Panel
 
-
 ## Emitted when the "Run Part 1" button is pressed, along with the current
 ## input file's filepath.
 signal part_one_button_pressed(input_filepath: String)
@@ -8,10 +7,9 @@ signal part_one_button_pressed(input_filepath: String)
 ## input file's filepath.
 signal part_two_button_pressed(input_filepath: String)
 
-
 const BUNDLED_INPUT_DIR := "res://problems"
-const MAX_DISPLAYABLE_FILE_LENGTH := 30 ## Max length string we can show as an input file in the dialog
-
+## Max length string we can show as an input file in the dialog
+const MAX_DISPLAYABLE_FILE_LENGTH := 30
 
 @export var challenge_number := 0
 @export_file("*.txt") var input_filepath: String
@@ -31,7 +29,7 @@ func _ready() -> void:
 	# Set dialog title correctly
 	var formatted_challenge_number := "%02d" % challenge_number
 	title_label.text = "Day " + formatted_challenge_number
-	
+
 	if not input_filepath:
 		# No input filepath set, so try to find a challenge input matching the
 		# challenge_number in the default resource directory.
