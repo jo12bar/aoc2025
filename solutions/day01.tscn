@@ -1,8 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3s2dxq3dfug1"]
+[gd_scene load_steps=4 format=3 uid="uid://d3s2dxq3dfug1"]
 
 [ext_resource type="PackedScene" uid="uid://qw4vivknjbej" path="res://common/gui/challenge_greeter.tscn" id="1_ruejk"]
+[ext_resource type="Script" uid="uid://dtpeby0nxs5ps" path="res://solutions/day_01.gd" id="1_xwers"]
+[ext_resource type="PackedScene" uid="uid://dtw3o6ijjytmm" path="res://solutions/combo_lock.tscn" id="2_qwomg"]
 
-[node name="Day01" type="Node"]
+[node name="Day01" type="Node" node_paths=PackedStringArray("challenge_greeter", "combo_lock", "running_label", "stats_label")]
+script = ExtResource("1_xwers")
+challenge_greeter = NodePath("ChallengeGreeter")
+combo_lock = NodePath("ComboLock")
+running_label = NodePath("RunningLabel")
+stats_label = NodePath("StatsLabel")
+
+[node name="ComboLock" parent="." instance=ExtResource("2_qwomg")]
+position = Vector2(79, 91)
+
+[node name="StatsLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(105, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -67.5
+offset_right = 44.0
+offset_bottom = -15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Times stopped on 0:	0
+Times passed 0:	0
+Current position:	0
+Current instruction:	L0"
+tab_stops = PackedFloat32Array(45)
+
+[node name="RunningLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = 50.0
+offset_right = 36.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Waiting for input..."
+metadata/_edit_use_anchors_ = true
 
 [node name="ChallengeGreeter" parent="." instance=ExtResource("1_ruejk")]
 anchors_preset = 8
@@ -17,3 +61,7 @@ offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 challenge_number = 1
+
+[connection signal="passed_zero" from="ComboLock" to="." method="_on_combo_lock_passed_zero"]
+[connection signal="part_one_button_pressed" from="ChallengeGreeter" to="." method="_on_challenge_greeter_part_one_button_pressed"]
+[connection signal="part_two_button_pressed" from="ChallengeGreeter" to="." method="_on_challenge_greeter_part_two_button_pressed"]

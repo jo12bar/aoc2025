@@ -1,0 +1,227 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtw3o6ijjytmm"]
+
+[ext_resource type="Script" uid="uid://t76631y2p52v" path="res://solutions/combo_lock.gd" id="1_acoqh"]
+
+[sub_resource type="Gradient" id="Gradient_qwomg"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.93986255, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.40392157, 0.40392157, 0.40392157, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kski7"]
+gradient = SubResource("Gradient_qwomg")
+width = 48
+height = 48
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_t7c50"]
+interpolation_mode = 1
+colors = PackedColorArray(0.7137255, 0.7137255, 0.7137255, 1, 0.7137255, 0.7137255, 0.7137255, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_olay4"]
+gradient = SubResource("Gradient_t7c50")
+width = 3
+
+[sub_resource type="Gradient" id="Gradient_xwers"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.024054984, 0.05154639, 0.4742268, 0.54295534, 0.92, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qwomg"]
+gradient = SubResource("Gradient_xwers")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_f4mkn"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fgoo2"]
+gradient = SubResource("Gradient_f4mkn")
+width = 4
+
+[node name="ComboLock" type="Node2D" node_paths=PackedStringArray("dial")]
+script = ExtResource("1_acoqh")
+dial = NodePath("Dial")
+metadata/_edit_group_ = true
+
+[node name="Scale" type="Sprite2D" parent="."]
+process_mode = 4
+texture_filter = 1
+texture = SubResource("GradientTexture2D_kski7")
+
+[node name="Node2D" type="Node2D" parent="Scale"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Node2D"]
+texture_filter = 1
+position = Vector2(0, -18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scale/Node2D"]
+texture_filter = 1
+position = Vector2(18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scale/Node2D"]
+texture_filter = 1
+position = Vector2(-18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Scale/Node2D"]
+texture_filter = 1
+position = Vector2(0, 18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Node2D2" type="Node2D" parent="Scale"]
+rotation = 0.7853982
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Node2D2"]
+texture_filter = 1
+position = Vector2(0, -18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scale/Node2D2"]
+texture_filter = 1
+position = Vector2(18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scale/Node2D2"]
+texture_filter = 1
+position = Vector2(-18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Scale/Node2D2"]
+texture_filter = 1
+position = Vector2(0, 18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Node2D3" type="Node2D" parent="Scale"]
+rotation = 0.2617994
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Node2D3"]
+texture_filter = 1
+position = Vector2(0, -18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scale/Node2D3"]
+texture_filter = 1
+position = Vector2(18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scale/Node2D3"]
+texture_filter = 1
+position = Vector2(-18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Scale/Node2D3"]
+texture_filter = 1
+position = Vector2(0, 18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Node2D4" type="Node2D" parent="Scale"]
+rotation = 0.5235988
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Node2D4"]
+texture_filter = 1
+position = Vector2(0, -18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scale/Node2D4"]
+texture_filter = 1
+position = Vector2(18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scale/Node2D4"]
+texture_filter = 1
+position = Vector2(-18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Scale/Node2D4"]
+texture_filter = 1
+position = Vector2(0, 18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Node2D5" type="Node2D" parent="Scale"]
+rotation = 1.0471976
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Node2D5"]
+texture_filter = 1
+position = Vector2(0, -18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scale/Node2D5"]
+texture_filter = 1
+position = Vector2(18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scale/Node2D5"]
+texture_filter = 1
+position = Vector2(-18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Scale/Node2D5"]
+texture_filter = 1
+position = Vector2(0, 18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Node2D6" type="Node2D" parent="Scale"]
+rotation = 1.3089969
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Node2D6"]
+texture_filter = 1
+position = Vector2(0, -18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scale/Node2D6"]
+texture_filter = 1
+position = Vector2(18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scale/Node2D6"]
+texture_filter = 1
+position = Vector2(-18.5, 0)
+texture = SubResource("GradientTexture1D_olay4")
+offset = Vector2(3.8146973e-06, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Scale/Node2D6"]
+texture_filter = 1
+position = Vector2(0, 18.5)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_olay4")
+
+[node name="Dial" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 3.1415927
+texture = SubResource("GradientTexture2D_qwomg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Dial"]
+texture_filter = 1
+position = Vector2(0, -11)
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_fgoo2")
