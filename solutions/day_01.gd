@@ -44,13 +44,13 @@ func _step_dial_sim() -> void:
 
 	if combo_lock.dial_value == 0:
 		times_stopped_on_zero += 1
-		
+
 	input_line += 1
 
 
 func _step_part_1() -> void:
 	await _step_dial_sim()
-	
+
 	if input_line >= input.size():
 		part_1_step_queued = false
 		running_part_1 = false
@@ -62,7 +62,7 @@ func _step_part_1() -> void:
 
 func _step_part_2() -> void:
 	await _step_dial_sim()
-	
+
 	if input_line >= input.size():
 		part_2_step_queued = false
 		running_part_2 = false
