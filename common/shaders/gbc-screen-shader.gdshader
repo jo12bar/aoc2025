@@ -205,23 +205,22 @@ void fragment() {
 	if (enable_color_correction) {
 		// Adapted from the GLSL port of the Gambatte emulator's color correction shader found in
 		// libretro's source code.
-		// Start by over-multiplying the entire image:
-		COLOR.rgb *= 255.0;
-		
-		// Cast our color components to ints so we can do bitshift magic
-		int r = int(COLOR.r);
-		int g = int(COLOR.g);
-		int b = int(COLOR.b);
-		
-		// Do some bitshifting color-correction magic (don't ask me, ask the
-		// Gambatte devs).
-		int corrected_r = (r * 13 + g * 2 + b) >> 4;
-		int corrected_g = (g * 3 + b) >> 2;
-		int corrected_b = (r * 3 + g * 2 + b * 11) >> 4;
-		
-		// Set the image to our corrected components, and undo that over-multiplication
-		COLOR.rgb = vec3(float(corrected_r), float(corrected_g), float(corrected_b));
-		COLOR.rgb /= 255.0;
+		// We use a colour correction matrix, and then "scale" it to affect how
+		// much it affects each colour channel. Note that we could've used the
+		// integer-math method found in libretro's source instead, but it performs
+		// worse, even if it's a little bit more accurate.
+		mat3 color_correction = mat3(
+			vec3(13.0, 2.0, 1.0),
+			vec3(0.0, 3.0, 1.0),
+			vec3(3.0, 2.0, 11.0)
+		);
+		mat3 scale = mat3(
+			vec3(1.0/16.0, 0.0, 0.0),
+			vec3(0.0, 1.0/4.0, 0.0),
+			vec3(0.0, 0.0, 1.0/16.0)
+		);
+		color_correction *= scale;
+		COLOR.rgb *= color_correction;
 	}
 	
 		
