@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Advent of Code 2025"
+run/main_scene="uid://cyc8ctlwe43cr"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/use_filter=false
@@ -18,11 +19,10 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=160
-window/size/viewport_height=144
+window/size/viewport_width=720
+window/size/viewport_height=656
 window/subwindows/embed_subwindows=false
-window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
+window/stretch/mode="canvas_items"
 
 [gui]
 
@@ -30,4 +30,5 @@ theme/custom="uid://dmscijs2s02ix"
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(1, 1, 1, 1)
+environment/defaults/default_clear_color=Color(0.972549, 0.972549, 0.972549, 1)
+2d/snap/snap_2d_transforms_to_pixel=true
