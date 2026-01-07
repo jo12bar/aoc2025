@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3s2dxq3dfug1"]
 
 [ext_resource type="PackedScene" uid="uid://qw4vivknjbej" path="res://common/gui/challenge_greeter.tscn" id="1_ruejk"]
-[ext_resource type="Script" uid="uid://dtpeby0nxs5ps" path="res://solutions/day_01.gd" id="1_xwers"]
-[ext_resource type="PackedScene" uid="uid://dtw3o6ijjytmm" path="res://solutions/combo_lock.tscn" id="2_qwomg"]
+[ext_resource type="Script" uid="uid://dtpeby0nxs5ps" path="res://solutions/day01/day_01.gd" id="1_xwers"]
+[ext_resource type="PackedScene" uid="uid://dtw3o6ijjytmm" path="res://solutions/day01/combo_lock.tscn" id="2_qwomg"]
 
 [node name="Day01" type="Node" node_paths=PackedStringArray("challenge_greeter", "combo_lock", "running_label", "stats_label")]
 script = ExtResource("1_xwers")

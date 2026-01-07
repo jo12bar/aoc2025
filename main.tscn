@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyc8ctlwe43cr"]
 
 [ext_resource type="Shader" uid="uid://dyqtqpoou8mhx" path="res://common/shaders/gbc-screen-shader.gdshader" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://d3s2dxq3dfug1" path="res://solutions/day01.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://d3s2dxq3dfug1" path="res://solutions/day01/day01.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://bc6ufpqf60qni" path="res://common/textures/lcd_back.png" id="2_h2yge"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dtw3o6ijjytmm"]
 
-[ext_resource type="Script" uid="uid://t76631y2p52v" path="res://solutions/combo_lock.gd" id="1_acoqh"]
+[ext_resource type="Script" uid="uid://t76631y2p52v" path="res://solutions/day01/combo_lock.gd" id="1_acoqh"]
 
 [sub_resource type="Gradient" id="Gradient_qwomg"]
 interpolation_mode = 1
