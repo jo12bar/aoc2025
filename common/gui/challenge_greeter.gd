@@ -1,3 +1,4 @@
+class_name ChallengeGreeter
 extends Panel
 
 ## Emitted when the "Run Part 1" button is pressed, along with the current

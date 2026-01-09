@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyc8ctlwe43cr"]
 
 [ext_resource type="Shader" uid="uid://dyqtqpoou8mhx" path="res://common/shaders/gbc-screen-shader.gdshader" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://d3s2dxq3dfug1" path="res://solutions/day01/day01.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://bc6ufpqf60qni" path="res://common/textures/lcd_back.png" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dxpo0lec0wbw2" path="res://solutions/day02/day_02.tscn" id="3_h2yge"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
 shader = ExtResource("1_0xm2m")
@@ -69,4 +69,4 @@ canvas_item_default_texture_filter = 0
 size = Vector2i(160, 144)
 render_target_update_mode = 4
 
-[node name="Day01" parent="ShaderWrapper/GameViewportContainer/GameViewport" instance=ExtResource("1_ig7tw")]
+[node name="Day02" parent="ShaderWrapper/GameViewportContainer/GameViewport" instance=ExtResource("3_h2yge")]

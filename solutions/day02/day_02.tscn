@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxpo0lec0wbw2"]
+
+[ext_resource type="Script" uid="uid://dcmmdnuy5437m" path="res://solutions/day02/day_02.gd" id="1_n553q"]
+[ext_resource type="PackedScene" uid="uid://qw4vivknjbej" path="res://common/gui/challenge_greeter.tscn" id="2_m57bm"]
+
+[node name="Day02" type="ColorRect" node_paths=PackedStringArray("result_label", "id_item_list")]
+custom_minimum_size = Vector2(160, 144)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.972549, 0.972549, 0.972549, 1)
+script = ExtResource("1_n553q")
+challenge_greeter_scene = ExtResource("2_m57bm")
+result_label = NodePath("VBoxContainer/ResultLabel")
+id_item_list = NodePath("VBoxContainer/ScrollContainer/IDList")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 144.0
+
+[node name="ResultLabel" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Invalid ID sum: ???"
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="IDList" type="ItemList" parent="VBoxContainer/ScrollContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+auto_height = true
+wraparound_items = false
+max_columns = 2
